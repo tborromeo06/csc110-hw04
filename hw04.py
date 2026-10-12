@@ -15,12 +15,12 @@ def check_text():
         if dog or Dog is inside the user text, print you used the word dog or Dog
         if anything else is submitted, print Try again."""
     
-    while True:
+    while True: #use a while loop because the condition is not set it is unpredictable
         text = input("Give me a sentence: ")
         if secret_word in text:
             print("You used the secret word!")
-            break
-        elif "dog" in text or "Dog" in text:
+            break #interupt after secret word is used
+        elif "dog" in text or "Dog" in text: #elif is used when you have multiple conditions inside a statement
             print("You used the word \"dog\" or the word \"Dog\"!")
             break
         else:
@@ -36,8 +36,8 @@ def check_greater():
         if the integers are equal, print try again and repeat the whole loop from the start."""
     
     while True:
-        text1 = int(input("Give me your first integer: "))
-        text2 = int(input("Give me your second integer: "))
+        text1 = int(input("Give me your first integer: ")) #We want the input of the user to not be a word or phrase but a integer.
+        text2 = int(input("Give me your second integer: ")) # the int befor input makes the input of the user being an integer valid
         if text1 > text2:
             print("First is Greater!")
             print("Done")
@@ -59,12 +59,12 @@ def get_special_numbers():
         if the number is not divisible by 3, skip it.
         if the number is divisible by 5, skip it.
         for the numbers that arent affected by those conditions, print them """
-    for i in range(1,41):
-        if i % 2 == 0:
+    for i in range(1,41): # This range is saying give a range of numbers greater than one and less than 41. This gives us the range of 1 to 40 that we want.
+        if i % 2 == 0: # the numbers are even if they can give us zero when divided by two. (divisible by two)
             continue
-        if i % 3 != 0:
+        if i % 3 != 0: # the numbers are not divisible by three.
             continue
-        if i % 5 ==0:
+        if i % 5 ==0: # the numbers are divisible by 5
             continue
         else:
             print(i)
@@ -80,17 +80,17 @@ def my_for_loop():
         if the letter is not a vowel, print {let} is a consonant"""
     text = input("Give me a string: ")
     
-    if not (2 <= len(text) <= 5) or " " in text:
+    if not (2 <= len(text) <= 5) or " " in text: #if the word given is not in between 2 and 5 letters, print bad word
         print("bad word")
         return
     
     vowel = "aeiouAEIOU"
     
-    for let in text:
+    for let in text: # this whole section checks each letter in the given word, if the word is not bad, and checks if the letter is a vowel.
         if let in vowel:
             print(f"{let} is a vowel")
         else:
-            print(f"{let} is a consonant")
+            print(f"{let} is a consonant") # if the letter the code is checking is not a vowel, the code prints that it is a consonant.
 
 # Task 4.b
 def my_while_loop():
@@ -103,7 +103,7 @@ def my_while_loop():
         choice = input("Choose an option: a, b, c: ")
         
         if choice == "a":
-            continue
+            continue # This command jumps to the next version of the loop prompting the user to, again, chose and option. 
         elif choice == "b":
             print("Goodbye")
             break
